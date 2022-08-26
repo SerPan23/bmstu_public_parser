@@ -38,6 +38,7 @@ def send_telegram(public_name, body, domain, from_id, id):
 
 
 def check_new_posts(vk_api):
+    print("checked")
     for d in data.publics:
         domain = d
         posts = get_new_posts(vk_api, domain)
@@ -45,19 +46,21 @@ def check_new_posts(vk_api):
             send_telegram(data.publics_names[domain], p['text'], domain, p['from_id'], p['id'])
         if len(posts) > 0:
             print('added new ' + str(len(posts)) + ' posts from ' + domain)
+        else:
+            print('Nothing new from ' + domain)
         time.sleep(5)
 
 
 def main():
     token = secret_keys.vk_token
     vk_api = vk.API(access_token=token, v='5.131')
-    # check_new_posts(vk_api)
-    schedule.every(10).minutes.do(check_new_posts, vk_api)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-
+    check_new_posts(vk_api)
+    schedule.every(20).minutes.do(check_new_posts, vk_api=vk_api)
+    # schedule.every(5).seconds.do(check_new_posts, vk_api=vk_api)
 
 if __name__ == "__main__":
     print("Bot started")
     main()
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
