@@ -52,7 +52,7 @@ def main():
     token = secret_keys.vk_token
     vk_api = vk.API(access_token=token, v='5.131')
     # check_new_posts(vk_api)
-    schedule.every(10).minutes.do(check_new_posts(vk_api))
+    schedule.every(10).minutes.do(check_new_posts, vk_api)
     while True:
         schedule.run_pending()
         time.sleep(1)
