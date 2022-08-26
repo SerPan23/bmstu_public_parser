@@ -55,7 +55,7 @@ def main():
     token = secret_keys.vk_token
     vk_api = vk.API(access_token=token, v='5.131')
     check_new_posts(vk_api)
-    schedule.every(30).minutes.do(check_new_posts, vk_api=vk_api)
+    schedule.every(1).hours.do(check_new_posts, vk_api=vk_api)
     # schedule.every(5).seconds.do(check_new_posts, vk_api=vk_api)
 
 if __name__ == "__main__":
