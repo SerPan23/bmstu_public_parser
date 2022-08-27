@@ -15,7 +15,9 @@ def add_new_last_id(vk_api, domain):
 def main():
     token = secret_keys.vk_token
     vk_api = vk.API(access_token=token, v='5.131')
-    t = []
+    t = ['bas.bmstu',
+    'iu_stream',
+    'profkomiubmstu',]
     for i in t:
         add_new_last_id(vk_api, i)
 

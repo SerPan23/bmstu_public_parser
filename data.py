@@ -5,6 +5,9 @@ publics = [
     'library.bmstu',
     'studsovet_bmstu',
     'profkom_bmstu',
+    'bas.bmstu',
+    'iu_stream',
+    'profkomiubmstu',
 ]
 
 publics_names = {
@@ -12,6 +15,9 @@ publics_names = {
     'library.bmstu': 'Библиотека МГТУ им. Н.Э. Баумана',
     'studsovet_bmstu': 'Студенческий совет МГТУ им. Н.Э. Баумана',
     'profkom_bmstu': 'Профсоюз студентов МГТУ им. Н.Э. Баумана',
+    'bas.bmstu': 'Bauman Active Sports | BAS',
+    'iu_stream': 'Факультет ИУ МГТУ им. Н. Э. Баумана',
+    'profkomiubmstu': 'рофсоюз ИУ',
 }
 
 

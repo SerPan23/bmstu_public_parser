@@ -33,7 +33,7 @@ def send_telegram(public_name, body, domain, from_id, id):
     url = 'https://vk.com/' + str(domain) + '?w=wall' + str(from_id) + '_' + str(id)
     bot = telebot.TeleBot(secret_keys.tg_bot_token)
     # text = '<b>' + public_name + '</b>\n' + body.split('\n \n')[0] + '\n' + url
-    text = '<b>Новый пост в ' + public_name + '</b>\n' + url
+    text = '<b>Новый пост в ' + public_name + '</b>\n#' + domain + '\n' + url
     bot.send_message(chat_id=secret_keys.channel_id, text=text, parse_mode='html')
 
 
