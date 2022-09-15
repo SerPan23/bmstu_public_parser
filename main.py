@@ -7,8 +7,9 @@ import telebot
 import data
 
 
-
 def find_by_key(iterable, key, value):
+    if type(iterable) != type(list()):
+        return (-1, -1)
     for index, dict_ in enumerate(iterable):
         # print(index, dict_)
         if key in dict_ and dict_[key] == value:
@@ -25,6 +26,8 @@ def get_new_posts(vk_api, domain, count=10):
 
 def select_new_posts(posts, last_post):
     index, obj = find_by_key(posts, 'id', last_post)
+    if index == -1 and obj == -1:
+        return []
     new_posts = posts[index+1:]
     return new_posts
 

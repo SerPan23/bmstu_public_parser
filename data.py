@@ -17,7 +17,7 @@ publics_names = {
     'profkom_bmstu': 'Профсоюз студентов МГТУ им. Н.Э. Баумана',
     'bas.bmstu': 'Bauman Active Sports | BAS',
     'iu_stream': 'Факультет ИУ МГТУ им. Н. Э. Баумана',
-    'profkomiubmstu': 'рофсоюз ИУ',
+    'profkomiubmstu': 'Профсоюз ИУ',
 }
 
 
